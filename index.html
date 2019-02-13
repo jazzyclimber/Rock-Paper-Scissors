@@ -5,18 +5,42 @@
     <title></title>
   </head>
   <link rel="stylesheet" href="main.css">
-  <script src="main.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <body>
-    <div class="content-container">
-      <div id="score-section">
+    <div id="content-container" class="flex column justify-center align-center ">
 
+      <div id="round-section" class="flex justify-center">
+        <div id="round-container">
+          <h2 id="round">Round: 1</h2>
+        </div>
       </div>
-      <div id="option-section">
-        <div id="rock"></div>
-        <div id="paper"></div>
-        <div id="scissors"></div>
+
+      <div id="score-section" class="flex row justify-center">
+        <div id="player" class="">
+          <h2 id="player-score">Player Score = 0</h2>
+        </div>
+        <div id="computer" class="">
+          <h2 id="computer-score">Computer Score = 0</h2>
+        </div>
       </div>
+
+      <div id="option-section" class="flex row justify-center">
+        <div id="rock-container">
+          <h2 id="rock">Rock</h2>
+        </div>
+        <div id="paper-container">
+          <h2 id="paper">paper</h2>
+        </div>
+        <div id="scissors-container">
+          <h2 id="scissors">Scissors</h2>
+        </div>
+      </div>
+
+
     </div>
 
   </body>
+  <footer>
+    <script src="main.js" charset="utf-8"></script>
+  </footer>
 </html>
