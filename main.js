@@ -20,14 +20,12 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === computerSelection) {
     alert("It's a tie\! No points awarded\.");
-
   } else if (playerSelection === "rock" && computerSelection === "scissors" ||
   playerSelection === "paper" && computerSelection === "rock" ||
   playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
     $("#player-score").empty().append('Player Score \= ' + playerScore);
     alert("You Win\! One point for player\.");
-
   } else {
     computerScore++;
     $("#computer-score").empty().append('Computer Score \= ' + computerScore);
@@ -35,8 +33,8 @@ function playRound(playerSelection, computerSelection) {
   }
 
   round++
-  $("#round").empty().append("Round\: " + round);
 
+  $("#round").empty().append("Round\: " + round);
   if (playerScore === 3 || computerScore === 3 ) {
     if (playerScore === 3) {
       alert("Congratulations\! You have defeated the computer\!");
@@ -49,19 +47,13 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-//plays the game when user clicks on target
-document.getElementById("rock-container").addEventListener('click', function(){
-  let playerSelection = "rock";
+//Initiates one play round on click of button
+function play(e) {
+  let playerSelection = e.target.attributes[2].value;
   let computerSelection = computerPlay();
   playRound(playerSelection, computerSelection);
-});
-document.getElementById("paper-container").addEventListener('click', function(){
-  let playerSelection = "paper";
-  let computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-});
-document.getElementById("scissors-container").addEventListener('click', function(){
-  let playerSelection = "scissors";
-  let computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-});
+}
+
+//Sets an event listener for click of button so play() can be called. 
+var buttons = document.querySelectorAll('.button');
+buttons.forEach(button => button.addEventListener('click', play));

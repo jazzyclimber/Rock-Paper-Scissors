@@ -66,13 +66,22 @@ html, body {
 }
 
 /* Options section */
-#rock-container, #paper-container,
-#scissors-container {
+button{
   margin: 10px;
-  padding: 0px 15px;
+  padding: 15px 15px;
   background-color: #efefef;
   cursor: pointer;
   width: 120px;
   text-align: center;
   border-radius: 5px;
+  font-size: 30px;
+  font-family: inherit;
+  font-weight: bold;
+}
+button:active {
+  border: none;
+}
+
+button:focus {
+  outline: none;
 }
